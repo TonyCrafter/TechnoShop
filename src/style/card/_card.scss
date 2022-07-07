@@ -8,7 +8,7 @@
   &__details {
     display: flex;
     gap: 30px;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
   }
 
   &__gallery {
@@ -16,7 +16,7 @@
   }
 
   &__image {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   &__slider-thumb {
     max-width: 447px;
@@ -136,3 +136,10 @@
   height: 12px;
 }
 
+.swiper-slide_active {
+  margin: 5px 0 10px 5px;
+}
+
+.card__thumb-btn_active {
+  outline: 2px solid $color-main;
+}

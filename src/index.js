@@ -7,9 +7,22 @@ import Swiper, { Thumbs, Scrollbar, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/pagination";
+import { pagination } from "./modules/pagination";
+
+const paginationWrapper = document.querySelector('.pagination');
+
+const pageURL = new URL(location);
+const page = +pageURL.searchParams.get("page") || 1;
+
+try {
+  pagination(paginationWrapper, 10, page, 5);
+} catch (e) {
+  console.warn(e)
+  console.warn('Эта не главная страница')
+}
 
 const thumbSwiper = new Swiper(".card__slider-thumb", {
-  spaceBetween: 44,
+  spaceBetween: 39,
   slidesPerView: 3,
   scrollbar: {
     el: ".swiper-scrollbar",
