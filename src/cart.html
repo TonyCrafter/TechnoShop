@@ -172,7 +172,7 @@
           <h3 class="address__title">Адрес доставки</h3>
 
           <form class="address__form">
-            <label>
+            <label class="address__city">
               <select class="address__item address__item_select" name="city">
                 <option value="" disabled selected>Город</option>
                 <option value="Moscow">Москва</option>
@@ -183,22 +183,22 @@
               </select>
             </label>
 
-            <label>
+            <label class="address__street">
               <input class="address__item" type="text" placeholder="Улица, дом">
             </label>
-            <label>
+            <label class="address__apartment">
               <input class="address__item" type="text" placeholder="Квартира">
             </label>
-            <label>
+            <label class="address__name">
               <input class="address__item" type="text" placeholder="ФИО">
             </label>
-            <label>
+            <label class="address__index">
               <input class="address__item" type="text" placeholder="Индекс">
             </label>
 
-            <button class="address__item address__item_btn">Сохранить</button>
+            <button class="address__item address__item_btn address__save">Сохранить</button>
 
-            <label class="address__label-save">
+            <label class="address__label-save address__checkbox">
               <input type="checkbox" name="save-address">Запомнить этот адрес
             </label>
           </form>
@@ -211,10 +211,10 @@
   <footer class="footer">
     <h2 class="visually-hidden">Навигационный блок сайта</h2>
     <div class="container footer__container">
-      <a href="/">
+      <a class="footer__logo-link" href="/">
         <img class="footer__logo" src="img/logo.svg" alt="Логотип Techno Shop">
       </a>
-      <div class="footer__column">
+      <div class="footer__column footer__catalog">
         <h3 class="footer__column-title">Каталог</h3>
         <ul class="footer__list footer__list_double">
           <li class="footer__item"><a href="#" class="footer__link">Смартфоны</a></li>
@@ -229,7 +229,7 @@
         </ul>
       </div>
 
-      <div class="footer__column">
+      <div class="footer__column footer__customer">
         <h3 class="footer__column-title">Покупателям</h3>
         <ul class="footer__list">
           <li class="footer__item"><a href="#" class="footer__link">Оплата заказа</a></li>
@@ -239,7 +239,7 @@
         </ul>
       </div>
       
-      <div class="footer__column">
+      <div class="footer__column footer__contacts">
         <h3 class="footer__column-title">Контакты</h3>
         <ul class="footer__list footer__list_contacts">
           <li class="footer__item">Тел:

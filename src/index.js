@@ -7,15 +7,15 @@ import Swiper, { Thumbs, Scrollbar, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/pagination";
-import { pagination } from "./modules/pagination";
-
-const paginationWrapper = document.querySelector('.pagination');
-
-const pageURL = new URL(location);
-const page = +pageURL.searchParams.get("page") || 1;
+import { startPagination } from "./modules/pagination";
 
 try {
-  pagination(paginationWrapper, 10, page, 5);
+  const paginationWrapper = document.querySelector(".pagination");
+  const pageURL = new URL(location);
+  const page = +pageURL.searchParams.get("page") || 1;
+
+  startPagination(paginationWrapper, 50, page);
+
 } catch (e) {
   console.warn(e)
   console.warn('Эта не главная страница')

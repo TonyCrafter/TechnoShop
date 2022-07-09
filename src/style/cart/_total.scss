@@ -1,13 +1,55 @@
 .total {
+  position: relative;
+  padding: 15px 0 25px;
+
+  @include mobile {
+    border: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc((100vw - 100%) / -2);
+      top: 0;
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: $color-primary;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: calc((100vw - 100%) / -2);
+      bottom: 0;
+      display: block;
+      width: 100vw;
+      height: 1px;
+      background-color: $color-primary;
+    }
+  }
+
   &__wrapper {
     border: 1px solid $color-grey;
     border-radius: 20px;
     padding: 40px 30px;
-    max-width: 710px;
+
+    @include laptop {
+      max-width: 494px;
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      border-width: 0;
+      padding: 0;
+    }
   }
 
   &__table {
     margin-bottom: 50px;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
   }
 
   &__row {
@@ -18,6 +60,13 @@
     font-size: 18px;
     line-height: 22px;
     padding: 0 10px;
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 17px;
+      padding: 0;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -30,6 +79,25 @@
       padding-bottom: 9px;
       border-bottom: 1px solid $color-grey-light;
       margin-bottom: 27px;
+
+      @include mobile {
+        position: relative;
+        margin-bottom: 14px;
+        font-size: 18px;
+        line-height: 22px;
+        border-bottom: 0;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: calc((100vw - 100%) / -2);
+          bottom: 0;
+          display: block;
+          width: 100vw;
+          height: 1px;
+          background-color: $color-grey-light;
+        }
+      }
     }
 
     &_grey {
@@ -38,14 +106,23 @@
 
     &_gap {
       margin-bottom: 40px;
+
+      @include mobile {
+        margin-bottom: 25px;
+      }
     }
   }
 
   &__order {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 17px;
+
+    @include desktop {
+      flex-wrap: wrap;
+      max-width: 353px;
+      margin: 0 auto;
+    }
   }
 
   &__submit {
@@ -57,17 +134,29 @@
     border: none;
     background-color: $color-main;
     color: $color-secondary;
+
+    @include mobile {
+      font-size: 12px;
+      line-height: 15px;
+      flex-basis: 300px;
+      height: 50px;
+    }
   }
 
   &__agree {
     display: flex;
     align-items: flex-start;
-    gap: 8px;   
+    gap: 8px;
     flex-basis: 292px;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     color: $color-grey;
+
+    @include mobile {
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 
   &__agree-link {
